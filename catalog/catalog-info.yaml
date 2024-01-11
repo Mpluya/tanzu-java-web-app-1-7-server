@@ -1,17 +1,17 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: tanzu-java-web-app-1-7-azure
+  name:  server-java-web-app-1-7-azure
   namespace: mae
-  description: Tanzu Java Web App
+  description: Server Java Web App
   tags:
     - app-accelerator
     - java
     - spring
-    - web
+    - server
     - tanzu
   annotations:
-    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=tanzu-java-web-app-1-7-azure'
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=server-java-web-app-1-7-azure'
 spec:
   type: service
   lifecycle: experimental
