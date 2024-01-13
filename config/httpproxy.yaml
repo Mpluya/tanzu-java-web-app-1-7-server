@@ -1,0 +1,32 @@
+apiVersion: projectcontour.io/v1
+kind: HTTPProxy
+metadata:
+  name: server-java-web-app-1-7-azure
+  namespace: mae
+spec:
+  virtualhost:
+    fqdn: server-java-web-app-1-7-azure.run.cssa.tapsme.org
+    tls:
+      secretName: server-java-web-app-1-7-azure
+  includes:
+  - name: server-java-web-app-1-7-azure-service
+    namespace: mae
+    conditions:
+      - prefix: /
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: server-java-web-app-1-7-azure
+  namespace: mae
+spec:
+  dnsNames:
+  - server-java-web-app-1-7-azure.run.cssa.tapsme.org 
+  issuerRef:
+    group: cert-manager.io
+    kind: ClusterIssuer
+    name: letsencrypt-production
+  secretName: server-java-web-app-1-7-azure
+  usages:
+  - digital signature
+  - key encipherment

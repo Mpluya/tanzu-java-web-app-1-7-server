@@ -8,6 +8,7 @@ metadata:
     apps.tanzu.vmware.com/has-tests: "true"
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
     app.kubernetes.io/part-of: server-java-web-app-1-7-azure
+    app.kubernetes.io/name: server-java-web-app-1-7-azure
 spec:
   build:
     env:
