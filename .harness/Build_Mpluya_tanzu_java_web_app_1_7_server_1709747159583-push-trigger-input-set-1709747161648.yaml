@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_Mpluya_tanzu_java_web_app_1_7_server_1709747159583-push-trigger-input-set
+  identifier: Build_Mpluya_tanzu_java_web_app_1_7_server_1709747159583pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_Mpluya_tanzu_java_web_app_1_7_server_1709747159583
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
