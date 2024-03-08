@@ -12,6 +12,12 @@ metadata:
     - tanzu
   annotations:
     'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=server-java-web-app-1-7-azure'
+    harness.io/pipelines: |
+      tap: https://app.harness.io/ng/account/S-5u-O_wShCfLA747_FkhA/home/orgs/default/projects/default_project/pipelines/Build_Mpluya_tanzu_java_web_app_1_7_server_1709747159583
+    harness.io/project-url: https://app.harness.io/ng/account/S-5u-O_wShCfLA747_FkhA/home/orgs/default/projects/default_project/details
+    harness.io/ci-pipelineIds: Build_Mpluya_tanzu_java_web_app_1_7_server_1709747159583
+
+
 spec:
   type: service
   lifecycle: experimental
