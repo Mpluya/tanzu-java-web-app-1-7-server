@@ -4,8 +4,9 @@ metadata:
   name: server-java-web-app-1-7-azure
   namespace: mae
   labels:
-    apps.tanzu.vmware.com/workload-type: server
+    apps.tanzu.vmware.com/workload-type: server-with-git-annotation
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
+    apps.tanzu.vmware.com/has-tests: "true"
     app.kubernetes.io/part-of: server-java-web-app-1-7-azure
     app.kubernetes.io/name: server-java-web-app-1-7-azure
 spec:
@@ -14,9 +15,14 @@ spec:
       - name: BP_JVM_VERSION
         value: "17"
   params:
-  - name: annotations
+  - name: ports
     value:
-      autoscaling.knative.dev/minScale: "1"
+      - containerPort: 9000
+        name: mon
+        port: 9000
+      - containerPort: 8080
+        name: app
+        port: 8080
   - name: testing_pipeline_matching_labels
     value:
       apps.tanzu.vmware.com/pipeline: test
